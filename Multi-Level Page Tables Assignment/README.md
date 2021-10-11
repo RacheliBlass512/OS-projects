@@ -21,6 +21,7 @@ or physical), we refer to the least significant bit as bit 0 and to the most sig
 57 bits are used for translation. The top 7 bits are guaranteed to be identical to bit 56, i.e., they
 are either all ones or all zeroes. The following depicts the virtual address layout:
 ![1](../images/1.png)
+
 **Physical addresses** The physical address size of our hardware is also 64 bits.
 
 **Page table structure** The page/frame size is 4 KB (4096 bytes). Page table nodes occupy a
@@ -34,7 +35,7 @@ points to. The following depicts the PTE format:
 1. A function to create/destroy virtual memory mappings in a page table:
 
     ```c
-    void page_table_update(uint64 t pt, uint64 t vpn, uint64 t ppn);
+    void page_table_update(uint54_t pt, uint54_t vpn, uint54_t ppn);
     ```
 
     This function takes the following arguments:
@@ -48,7 +49,7 @@ points to. The following depicts the PTE format:
 
 2. A function to query the mapping of a virtual page number in a page table:
     ```c
-    uint64 t page_table_query(uint64 t pt, uint64 t vpn);
+    uint54_t page_table_query(uint54_t pt, uint54_t vpn);
     ```
     This function returns the physical page number that vpn is mapped to, or `NO MAPPING` if no
     mapping exists. The meaning of the pt argument is the same as with page_table_update().
