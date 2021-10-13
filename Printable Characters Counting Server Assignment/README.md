@@ -45,6 +45,7 @@ unsigned integer in network byte order.
 format string:
 
 *"# of printable characters: %u\n"*
+
 5. Exit with exit code 0.
 
 ## Server specification
